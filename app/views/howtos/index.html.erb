@@ -5,18 +5,22 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
+      <th>Task</th>
     </tr>
   </thead>
 
   <tbody>
     <% @howtos.each do |howto| %>
-      <tr>
-        <td><%= howto.name %></td>
-        <td><%= howto.description %></td>
-        <td><%= link_to 'Show', howto %></td>
-        <td><%= link_to 'Edit', edit_howto_path(howto) %></td>
-        <td><%= link_to 'Destroy', howto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= howto.name %></td>
+      <td><%= howto.description %></td>
+      <td>
+        <%= howto.steps.name %>
+      </td>
+      <td><%= link_to 'Show', howto %></td>
+      <td><%= link_to 'Edit', edit_howto_path(howto) %></td>
+      <td><%= link_to 'Destroy', howto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
