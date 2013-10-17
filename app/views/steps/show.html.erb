@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @step.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @step.description %>
+</p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @step.howto_id %>
+</p>
+
+<%= link_to 'Edit', edit_howto_step_path(@howto, @step) %> |
+<%= link_to 'Back', howto_steps_path(@howto) %>
