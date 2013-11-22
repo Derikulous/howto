@@ -14,9 +14,7 @@
     <tr>
       <td><%= howto.name %></td>
       <td><%= howto.description %></td>
-      <td>
-        <%= howto.steps.name %>
-      </td>
+      <td><%= howto.steps.name %></td>
       <td><%= link_to 'Show', howto %></td>
       <td><%= link_to 'Edit', edit_howto_path(howto) %></td>
       <td><%= link_to 'Destroy', howto, method: :delete, data: { confirm: 'Are you sure?' } %></td>

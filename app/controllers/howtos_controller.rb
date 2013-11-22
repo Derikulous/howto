@@ -26,7 +26,7 @@ class HowtosController < ApplicationController
   # POST /howtos
   # POST /howtos.json
   def create
-    @howto = Howto.new(params[:howto])
+    @howto = Howto.new(howto_params)
 
     respond_to do |format|
       if @howto.save
@@ -63,6 +63,12 @@ class HowtosController < ApplicationController
       format.html { redirect_to howtos_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def howto_params
+    params.require(:howto).permit(:name, :description, steps_attributes: [ :name, :description])
   end
 end
 
