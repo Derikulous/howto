@@ -1,8 +1,8 @@
 Stepbystep::Application.routes.draw do
-  get "steps/create"
-  get "steps/complete"
-  resources :steps
-  resources :howtos
+
+  resources :howtos do
+    resources :steps
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
